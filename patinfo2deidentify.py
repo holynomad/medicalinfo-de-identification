@@ -5,6 +5,7 @@ import os
 import xml.etree.ElementTree as ET
 
 targetDir = r"InputYourXMLFolder"
+destDir = r"InputYourDestFolder"
 num = 1
 
 # targetDir에서 .xml파일 이름들 리스트로 가져오기
@@ -20,6 +21,7 @@ for xml_file in xml_list:
     
     replaceFailCnt = 0   
 
+    dest_path = destDir + "\\" + xml_file
     target_path = targetDir + "\\" + xml_file
     targetXML = open(target_path, 'rt', encoding='UTF8')
 
@@ -66,7 +68,7 @@ for xml_file in xml_list:
 
 
     if replaceFailCnt == 0:
-        tree.write(target_path.replace('.xml', '_deidentified.xml'))
+        tree.write(dest_path.replace('.xml', '_deidentified.xml'))
     else:
         print("target_path is not de-identified (failcount = " + str(replaceFailCnt) + ")")        
 
