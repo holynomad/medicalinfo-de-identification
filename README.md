@@ -8,3 +8,5 @@ python
 
 ## 주요 스크립트 설명
 
+### patinfo2deidentify.py
+xml 파서 기반 특정 tag 가명처리 스크립트
